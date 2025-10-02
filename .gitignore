@@ -13,5 +13,4 @@ build/
 *.tmp
 
 # Sensitive files
-*secret*
 .env
