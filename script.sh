@@ -1,4 +1,35 @@
-# !/bin/bash
+#!/bin/bash
+
+###############################################################################
+# Build Automation Script
+# 
+# Description:
+#   Automates the build process by copying source files to a build directory
+#   with version control, user confirmation, and sensitive file protection.
+#
+# Usage:
+#   ./script.sh
+#   bash script.sh
+#
+# Requirements:
+#   - source/changelog.md with version on first line (format: # Version X.X.X)
+#   - source/ directory containing files to build
+#
+# Features:
+#   - Automatic version detection from changelog
+#   - Interactive build confirmation
+#   - Excludes sensitive files (secretinfo.md) from builds
+#   - Input validation and error handling
+#
+# License:
+#   MIT License - See LICENSE file for details
+#
+# Author:
+#   Matthew Sebastian
+#
+# Version:
+#   1.0.0
+###############################################################################
 
 echo "🔥🔥🔥Beginning build!! 🔥🔥🔥"
 
@@ -29,7 +60,7 @@ then
     if [ $filename == "source/secretinfo.md" ]
     then
       echo "Not copying $filename with sensitive info"
-      # copy file but replacing sensitive info to 'XX' 
+      # # copy file but replacing sensitive info to 'XX' 
       # echo "Copying $filename with sensitive info replaced"
       # sed 's/42/XX/g' "$filename" > build/secretinfo.md
     else
